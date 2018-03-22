@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog da School of Net</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Blog da School of Net</h1>
+<nav>
+    <a href="{% url 'post_list' %}">Listar posts</a>
+</nav>
+Categorias
+<nav>
+    {% for category in categories %}
+        <a href="{% url 'post_list' %}?category_id={{ category.id }}">{{ category.name }}</a> |
+    {% endfor %}
+</nav>
+{% block content %}{% endblock %}
+</body>
+</html>
+

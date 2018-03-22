@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <article>
+            <h1>{{ post.title }}</h1>
+            {{ post.content }}
+            <p>Autor - {{ post.user.first_name | add:' '| add:post.user.last_name }}</p>
+        </article>
+    </div>
+{% endblock %}
